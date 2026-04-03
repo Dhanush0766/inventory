@@ -28,11 +28,7 @@ const AppRoutes = () => {
 
   return (
     <Routes>
-      <Route path="/login" element={
-        isAuthenticated() ? 
-          <Navigate to={user?.role === 'admin' ? '/admin/dashboard' : '/staff/dashboard'} replace /> : 
-          <Login />
-      } />
+      <Route path="/login" element={<Login />} />
 
       {/* Admin Routes */}
       <Route path="/admin" element={
@@ -60,11 +56,7 @@ const AppRoutes = () => {
       </Route>
 
       {/* Public Landing */}
-      <Route path="/" element={
-        isAuthenticated() ? 
-          <Navigate to={user?.role === 'admin' ? '/admin/dashboard' : '/staff/dashboard'} replace /> : 
-          <Landing />
-      } />
+      <Route path="/" element={<Landing />} />
 
       {/* Default fallback */}
       <Route path="*" element={<Navigate to="/" replace />} />

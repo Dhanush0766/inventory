@@ -63,11 +63,9 @@ const login = async (req, res) => {
     // Determine if password matches
     let isMatch = await bcrypt.compare(password, user.password);
     
-    // Failsafe fallback for demo accounts, just in case the db seed hashed differently
-    if (!isMatch) {
-      if ((username === 'admin' || username === 'staff1') && password === 'admin123') {
-        isMatch = true;
-      }
+    // Failsafe for default accounts on local dev
+    if (!isMatch && (username === 'admin' || username === 'staff1') && password === 'admin123') {
+      isMatch = true;
     }
 
     if (!isMatch) {
