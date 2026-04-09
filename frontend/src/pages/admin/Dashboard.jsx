@@ -5,7 +5,7 @@ import { FiBox, FiAlertTriangle, FiTruck, FiShoppingCart, FiDollarSign, FiClock 
 import toast from 'react-hot-toast';
 import ThreeDBox from '../../components/ThreeDBox';
 
-const COLORS = ['#6366f1', '#8b5cf6', '#a78bfa', '#c4b5fd', '#818cf8', '#7c3aed'];
+const COLORS = ['#0ea5e9', '#06b6d4', '#2dd4bf', '#3b82f6', '#6366f1', '#8b5cf6'];
 
 const AdminDashboard = () => {
   const [stats, setStats] = useState(null);
@@ -49,13 +49,13 @@ const AdminDashboard = () => {
 
   return (
     <div className="dashboard">
-      <div className="dashboard-hero" style={{ position: 'relative', overflow: 'hidden', backgroundColor: '#1e293b', borderRadius: '16px', padding: '2.5rem', marginBottom: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', border: '1px solid #334155' }}>
+      <div className="dashboard-hero">
         <div style={{ zIndex: 1, position: 'relative' }}>
-          <h1 style={{ fontSize: '2.2rem', fontWeight: 'bold', color: '#f8fafc', marginBottom: '0.5rem' }}>Admin Dashboard</h1>
-          <p style={{ color: '#94a3b8', fontSize: '1.1rem', maxWidth: '500px' }}>Access your inventory analytics and manage your entire supply chain at a glance.</p>
+          <h1>Admin Dashboard</h1>
+          <p>Access your inventory analytics and manage your entire supply chain at a glance.</p>
         </div>
         <div style={{ width: '300px', height: '250px', position: 'absolute', right: '-20px', top: '50%', transform: 'translateY(-50%)' }}>
-          <ThreeDBox color="#8b5cf6" isDistorted={true} />
+          <ThreeDBox color="var(--accent)" isDistorted={true} />
         </div>
       </div>
 
@@ -104,7 +104,7 @@ const AdminDashboard = () => {
               <XAxis dataKey="range_label" tick={{ fill: '#94a3b8' }} />
               <YAxis tick={{ fill: '#94a3b8' }} />
               <Tooltip contentStyle={{ background: '#1e293b', border: 'none', borderRadius: '8px', color: '#f1f5f9' }} />
-              <Bar dataKey="count" fill="#6366f1" radius={[6, 6, 0, 0]} />
+              <Bar dataKey="count" fill="#0ea5e9" radius={[6, 6, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -118,7 +118,7 @@ const AdminDashboard = () => {
               <YAxis tick={{ fill: '#94a3b8' }} />
               <Tooltip contentStyle={{ background: '#1e293b', border: 'none', borderRadius: '8px', color: '#f1f5f9' }} />
               <Legend />
-              <Area type="monotone" dataKey="quantity" stroke="#6366f1" fill="rgba(99,102,241,0.2)" name="Current Stock" />
+              <Area type="monotone" dataKey="quantity" stroke="#0ea5e9" fill="rgba(14, 165, 233, 0.2)" name="Current Stock" />
               <Area type="monotone" dataKey="min_stock_level" stroke="#ef4444" fill="rgba(239,68,68,0.1)" name="Min Stock Level" />
             </AreaChart>
           </ResponsiveContainer>
