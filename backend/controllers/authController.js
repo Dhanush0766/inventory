@@ -75,7 +75,7 @@ const login = async (req, res) => {
     // Generate JWT token
     const token = jwt.sign(
       { id: user.id, username: user.username, role: user.role },
-      process.env.JWT_SECRET,
+      process.env.JWT_SECRET || 'inventory_fallback_secret_key_because_render_is_silly',
       { expiresIn: process.env.JWT_EXPIRES_IN || '24h' }
     );
 
@@ -92,7 +92,7 @@ const login = async (req, res) => {
     });
   } catch (error) {
     console.error('Login error:', error);
-    res.status(500).json({ message: 'Server error during login.' });
+    res.status(500).json({ message: 'Server error: ' + error.message });
   }
 };
 
