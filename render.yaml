@@ -14,17 +14,6 @@ services:
         value: production
       - key: JWT_SECRET
         generateValue: true
-      # Database connection variables (To be populated from Railway MySQL)
-      - key: DB_HOST
-        sync: false
-      - key: DB_PORT
-        sync: false
-      - key: DB_USER
-        sync: false
-      - key: DB_PASSWORD
-        sync: false
-      - key: DB_NAME
-        sync: false
 
   # -------------------------
   # FRONTEND - REACT (VITE)
