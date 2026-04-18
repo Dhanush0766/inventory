@@ -19,7 +19,11 @@ CREATE TABLE IF NOT EXISTS users (
 CREATE TABLE IF NOT EXISTS suppliers (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
-    email VARCHAR(100),
+    email V0=-
+    
+    
+    
+    ARCHAR(100),
     phone VARCHAR(20),
     address TEXT,
     city VARCHAR(50),
